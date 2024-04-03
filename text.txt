@@ -1,0 +1,141 @@
+indisch rood|indianred|
+lichtkoraal|lightcoral|
+zalm|salmon|
+donkerzalm|darksalmon|
+oranjerood|orangered|
+[[rood (kleur)|rood]]|
+[[vermiljoen]]|crimson|
+vuurvaste baksteen|firebrick|
+donkerrood|darkred|
+[[roze]]|pink|
+lichtroze|lightpink|
+|palevioletred|DB|
+acaciaroze|hotpink|
+dieproze|deeppink|
+middenvioletrood|mediumvioletred|
+lichtgeel|lightyellow|
+|lemonchiffon|FF|
+|lightgoldenrodyellow|FA|
+|papayawhip|FF|
+|moccasin|FF|
+|peachpuff|FF|
+|palegoldenrod|EE|
+[[kaki (kleur)|kaki]]|
+[[geel (kleur)|geel]]|
+[[goud]]|gold|
+donkerkaki|darkkhaki|
+lichtcyaan|lightcyan|
+lichtturkoois|paleturquoise|
+[[cyaan]]|aqua|
+[[aquamarijn]]|aquamarine|
+turkoois|turquoise|
+|mediumturquoise|48|
+donkerturkoois|darkturquoise|
+|powderblue|B0|
+lichtstaalblauw|lightsteelblue|
+lichtblauw|lightblue|
+[[hemelsblauw]]|skyblue|
+lichthemelsblauw|lightskyblue|
+diep [[hemelsblauw]]|deepskyblue|
+korenbloemblauw|cornflowerblue|
+staalblauw|steelblue|
+|cadetblue|5F|
+|mediumslateblue|7B|
+|dodgerblue|1E|
+koningsblauw|royalblue|
+[[blauw (kleur)|blauw]]|
+middenblauw|mediumblue|
+donkerblauw|darkblue|
+[[marine (kleur)|marine]]|
+nachtblauw|midnightblue|
+lichtzalm|lightsalmon|
+[[oranje (kleur)|oranje]]|
+donkeroranje|darkorange|
+koraal|coral|
+[[tomaat]]|tomato|
+oranjerood|orangered|
+groengeel|greenyellow|
+|chartreuse|7F|
+grasgroen|lawngreen|
+limoen|lime|
+bleekgroen|palegreen|
+lichtgroen|lightgreen|
+midlentegroen|mediumspringgreen|
+lentegroen|springgreen|
+geelgroen|yellowgreen|
+limoengroen|limegreen|
+|mediumseagreen|3C|
+zeegroen|seagreen|
+bosgroen|forestgreen|
+groen|green|
+|olivedrab|6B|
+[[olijf]]groen|olive|
+donkerolijfgroen|darkolivegreen|
+donkergroen|darkgreen|
+[[aquamarijn]]|aquamarine|
+|mediumaquamarine|66|
+donkerzeegroen|darkseagreen|
+lichtzeegroen|lightseagreen|
+donkercyaan|darkcyan|
+[[groenblauw]]|teal|
+[[lavendel]]|lavender|
+[[distels|distel]]|
+pruim|plum|
+[[violet]]|violet|
+fuchsia ([[Magenta (kleur)|magenta]])|
+orchidee|orchid|
+|mediumorchid|BA|
+|mediumpurple|93|
+leiblauw|slateblue|
+blauwviolet|blueviolet|
+donkerviolet|darkviolet|
+|darkorchid|99|
+|rebeccapurple|66|
+donkermagenta|darkmagenta|
+[[purper (verfstof)|purper]]|
+donkerleiblauw|darkslateblue|
+[[indigo (kleur)|indigo]]|
+|cornsilk|FF|
+|blanchedalmond|FF|
+|bisque|FF|
+|navajowhite|FF|
+tarwe|wheat|
+|burlywood|DE|
+|tan|D2|
+|rosybrown|BC|
+zandbruin|sandybrown|
+|goldenrod|DA|
+|darkgoldenrod|B8|
+|peru|CD|
+chocoladebruin|chocolate|
+|saddlebrown|8B|
+[[Rauwe sienna|sienna]]|
+[[bruin]]|brown|
+kastanjebruin|maroon|
+[[wit]]|white|
+sneeuwwit|snow|
+|honeydew|F0|
+mint|mintcream|
+[[ultramarijn]]|azure|
+|aliceblue|F0|
+|ghostwhite|F8|
+rookwit|whitesmoke|
+[[schelp]]|seashell|
+[[beige]]|beige|
+[[Kant (textiel)|kant]]|
+fluweelwit|floralwhite|
+[[ivoor]]|ivory|
+|antiquewhite|FA|
+[[linnen]]|linen|
+|lavenderblush|FF|
+|mistyrose|FF|
+|gainsboro|DC|
+lichtgrijs|lightgray|
+[[zilver]]|silver|
+donkergrijs|darkgray|
+[[grijs]]|gray|
+|dimgray|69|
+lichtleigrijs|lightslategray|
+leigrijs|slategray|
+donkerleigrijs|darkslategray|
+[[zwart (kleur)|zwart]]|

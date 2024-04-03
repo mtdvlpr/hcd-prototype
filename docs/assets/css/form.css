@@ -1,0 +1,18 @@
+/* Form styles */
+
+/* Inputs and labels */
+input,
+select,
+textarea {
+  margin: 0.5rem 0;
+}
+
+form > div > label {
+  display: block;
+}
+
+form > div > input + label,
+form > div > select + label,
+form > div > textarea + label {
+  display: inline;
+}

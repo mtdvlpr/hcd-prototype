@@ -1,0 +1,129 @@
+/* Style imports */
+@import url("./reset.css");
+@import url("./variables.css");
+@import url("./form.css");
+
+/* Main styles */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  padding: 0 2rem;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+header {
+  padding-top: 1rem;
+}
+
+header img {
+  display: none;
+  margin: 0 auto;
+}
+
+header h1 {
+  margin-top: 0;
+}
+
+main:target {
+  outline: 1px solid var(--link-hover-color);
+  outline-offset: 8px;
+}
+
+footer {
+  padding: 1em 0;
+  text-align: center;
+}
+
+footer p {
+  margin: 0 auto;
+}
+
+p {
+  max-width: 60ch;
+}
+
+.skip-to-content {
+  font-weight: 700;
+  left: 50%;
+  padding: 4px;
+  position: absolute;
+  transform: translate(-50%, -100%);
+  transition: transform 0.3s;
+}
+
+.skip-to-content:focus {
+  transform: translate(-50%, 0);
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+output {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 100%;
+}
+
+output > span {
+  display: flex;
+  align-items: center;
+}
+
+span.color {
+  font-size: 3em;
+  padding: 4px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  margin: 0.5em 0;
+  background-color: var(--button-color);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:not([disabled]):hover {
+  border-color: var(--button-hover-color);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: none;
+}
+
+a[aria-current] {
+  font-weight: bold;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" media="print" href="assets/css/print.css" />
+
+    <!-- Scripts -->
+    <script type="importmap">
+      {
+        "imports": {
+          "api": "./assets/js/api.js",
+          "general": "./assets/js/general.js"
+        }
+      }
+    </script>
+    <script type="module" src="assets/js/palette.js"></script>
+
+    <!-- Title and base URL -->
+    <title>Kleuren palette</title>
+  </head>
+  <body>
+    <a class="skip-to-content" href="#main">
+      Skip naar de inhoud van de pagina
+    </a>
+    <!-- Header -->
+    <header>
+      <nav aria-label="Navigatie">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="kleur.html">Kleur</a></li>
+          <li>
+            <a href="palette.html" aria-current="page">Kleuren palette</a>
+          </li>
+        </ul>
+      </nav>
+      <hgroup>
+        <h1>Kleuren palette</h1>
+        <p>
+          Op deze pagina kan je bepalen welke kleuren matchen met een bepaalde
+          kleur.
+        </p>
+      </hgroup>
+    </header>
+
+    <!-- Main content -->
+    <main id="main">
+      <form action="">
+        <p>
+          Vul een bepaalde kleur in of verstuur een foto van een kledingstuk
+        </p>
+        <div>
+          <label for="color">Kleur</label>
+          <input type="color" id="color" name="color" />
+        </div>
+        <div>
+          <label for="image">Kledingstuk</label>
+          <input type="file" id="image" name="image" />
+        </div>
+        <button type="submit">Vraag kleuren palette op</button>
+      </form>
+      <output></output>
+    </main>
+  </body>
+</html>
