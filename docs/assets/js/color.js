@@ -12,9 +12,10 @@ function initColorForm() {
 }
 
 async function getColor() {
+  const colorInput = document.querySelector('input[type="file"]').files[0];
   const output = document.querySelector("output");
   output.innerText = "Kleur wordt opgehaald...";
-  const color = await translateColor(await fetchColorByImage());
+  const color = await translateColor(await fetchColorByImage(colorInput));
   if (color) {
     output.innerText = `De gedetecteerde kleur is ${
       color.name

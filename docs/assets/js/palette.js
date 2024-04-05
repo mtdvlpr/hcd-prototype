@@ -1,4 +1,9 @@
-import { fetchColorByHex, fetchColorByImage, fetchColorPalette } from "api";
+import {
+  fetchColorByHex,
+  fetchColorByImage,
+  fetchColorPalette,
+  fetchColorByName,
+} from "api";
 import { translateColor } from "general";
 
 initPaletteForm();
@@ -14,11 +19,18 @@ function initPaletteForm() {
 async function getColorPalette() {
   const output = document.querySelector("output");
   output.innerText = "Kleuren palette wordt opgehaald...";
-  const colorInput = document.querySelector('input[type="color"]').value;
+  const colorInput = document
+    .querySelector('input[type="color"]')
+    .value?.replace("#000000", "");
+  const image = document.querySelector('input[type="file"]').files[0];
+  const colorName = document.querySelector('input[type="text"]').value;
   const color = await translateColor(
-    await (colorInput ? fetchColorByHex(colorInput) : fetchColorByImage())
+    await (colorInput
+      ? fetchColorByHex(colorInput)
+      : image
+      ? fetchColorByImage(image)
+      : fetchColorByName(colorName))
   );
-  console.log("color", color);
   if (!color) {
     output.innerText = "De kleur kon niet worden gedetecteerd.";
     return;
@@ -26,7 +38,6 @@ async function getColorPalette() {
   const colors = await Promise.all(
     (await fetchColorPalette(color.hex)).map(translateColor)
   );
-  console.log("colors", colors);
   if (colors) {
     output.innerHTML = `<span>De volgende kleuren passen goed bij ${
       color.name

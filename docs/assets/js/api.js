@@ -26,9 +26,10 @@ async function fetchData(url) {
 
 /**
  * Fetches a color by an image
+ * @param {File} image The image file
  * @returns {Promise<{name: string; hex: string; rgb: string; families: string[]} | null>} The color
  */
-export async function fetchColorByImage() {
+export async function fetchColorByImage(image) {
   const url = "./assets/data/colors.json";
   const colors = await fetchData(url);
   if (!colors) return null;
@@ -64,6 +65,7 @@ export async function fetchColorPalette(hex) {
  * @returns {Promise<{name: string; hex: string; rgb: string}>} The color
  */
 export async function fetchColorByHex(hex) {
+  if (!hex) return null;
   const url = `https://www.thecolorapi.com/id?format=json&hex=${hex.replace(
     "#",
     ""
@@ -97,4 +99,28 @@ export async function fetchColorNames() {
   const url = "./assets/data/translations.json";
   const names = await fetchData(url);
   return names || {};
+}
+
+/**
+ * Fetches the color by name
+ * @param {string} name The color name
+ * @returns {Promise<{name: string; hex: string; rgb: string; families: string[]} | null>} The color
+ */
+export async function fetchColorByName(name) {
+  if (!name) return null;
+  const url = "./assets/data/colors.json";
+  const colors = await fetchData(url);
+  const match = colors.find((color) => color.name === name.toUpperCase());
+  if (match) return match;
+
+  const names = await fetchColorNames();
+  const translation = Object.keys(names).find(
+    (key) => names[key] === name.toLowerCase()
+  );
+  if (!translation) return null;
+  const color = colors.find(
+    (color) => color.name === translation.toUpperCase()
+  );
+  if (color) return color;
+  return null;
 }
