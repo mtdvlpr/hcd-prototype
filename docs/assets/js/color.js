@@ -1,4 +1,5 @@
 import { fetchColorByImage } from "api";
+import { translateColor } from "general";
 
 initColorForm();
 

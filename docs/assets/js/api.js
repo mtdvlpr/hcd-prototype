@@ -3,7 +3,7 @@ import { capitalize } from "general";
 /**
  * Fetches data from a URL
  * @param {string} url The URL to fetch data from
- * @returns The data
+ * @returns {Promise<Record<string, any> | Record<string, any>[] | null>} The data
  */
 async function fetchData(url) {
   if (window.localStorage) {
@@ -26,7 +26,7 @@ async function fetchData(url) {
 
 /**
  * Fetches a color by an image
- * @returns {Promise<{name: string; hex: string; rgb: string; families: string[]}>} The color
+ * @returns {Promise<{name: string; hex: string; rgb: string; families: string[]} | null>} The color
  */
 export async function fetchColorByImage() {
   const url = "./assets/data/colors.json";
@@ -83,7 +83,7 @@ export async function fetchColorByHex(hex) {
  * @returns {Promise<string>} The Dutch translation
  */
 export async function fetchColorName(name) {
-  const url = "./assets/data/names.json";
+  const url = "./assets/data/translations.json";
   const names = await fetchData(url);
   if (!names) return capitalize(name);
   return capitalize(names[name.toLowerCase()] || name);
@@ -94,7 +94,7 @@ export async function fetchColorName(name) {
  * @returns {Promise<Record<string, string>>} The Dutch translations
  */
 export async function fetchColorNames() {
-  const url = "./assets/data/names.json";
+  const url = "./assets/data/translations.json";
   const names = await fetchData(url);
   return names || {};
 }

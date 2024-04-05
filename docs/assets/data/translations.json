@@ -1,4 +1,8 @@
 {
+  "light": "licht",
+  "dark": "donker",
+  "deep": "diep",
+  "pale": "bleek",
   "indianred": "indish rood",
   "lightcoral": "licht koraal",
   "salmon": "zalm",

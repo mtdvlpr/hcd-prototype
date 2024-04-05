@@ -3,15 +3,17 @@ import { fetchColorName, fetchColorNames } from "api";
 /**
  * Capitalizes a string
  * @param {string} str The string
- * @returns The capitalized string
+ * @returns {string} The capitalized string
  */
 export function capitalize(str) {
+  if (!str) return "";
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 /**
  * Translates a color to Dutch
- * @param {{name: string; hex: string; rgb: string; families: string[]}} color The color
+ * @param {{name: string; hex: string; rgb: string; families: string[]} | null} color The color
+ * @returns {Promise<{name: string; hex: string; rgb: string; families: string[]} | null>} The translated color
  */
 export async function translateColor(color) {
   if (!color) return null;
@@ -21,6 +23,7 @@ export async function translateColor(color) {
     name = name.replace(key, translations[key]);
     name = name.replace(capitalize(key), translations[key]);
   });
+
   const families =
     (await Promise.all(
       color.families?.map(async (family) => {
