@@ -10,9 +10,10 @@ initPaletteForm();
 
 function initPaletteForm() {
   const form = document.querySelector("form");
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    getColorPalette();
+    await getColorPalette();
+    form.reset();
   });
 }
 
