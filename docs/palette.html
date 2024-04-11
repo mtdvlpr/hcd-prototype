@@ -59,16 +59,49 @@
           <label for="color">Kleuren picker</label>
           <input type="color" id="color" name="color" />
         </div>
-        <div>
-          <label for="image">Kledingstuk</label>
+        <button
+          type="button"
+          onclick="document.getElementById('image-user').click()"
+        >
+          Maak een foto van jezelf
+        </button>
+        <button
+          type="button"
+          onclick="document.getElementById('image-environment').click()"
+        >
+          Maak een foto van je omgeving
+        </button>
+        <button
+          type="button"
+          onclick="document.getElementById('image-gallery').click()"
+        >
+          Kies een foto uit je galerij
+        </button>
+        <div aria-hidden="true">
+          <label for="image-user">Maak een foto van jezelf</label>
           <input
             type="file"
-            id="image"
+            id="image-user"
+            name="image"
+            accept="image/*"
+            capture="user"
+          />
+        </div>
+        <div aria-hidden="true">
+          <label for="image-environment">Maak een foto van je omgeving</label>
+          <input
+            type="file"
+            id="image-environment"
             name="image"
             accept="image/*"
             capture="environment"
           />
         </div>
+        <div aria-hidden="true">
+          <label for="image-gallery">Kies een foto uit je galerij</label>
+          <input type="file" id="image-gallery" name="image" accept="image/*" />
+        </div>
+        <output id="input-output"></output>
         <div>
           <label for="name">Kleur</label>
           <input type="text" id="name" name="name" />

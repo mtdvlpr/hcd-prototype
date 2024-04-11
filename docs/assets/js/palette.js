@@ -15,6 +15,58 @@ function initPaletteForm() {
     await getColorPalette();
     form.reset();
   });
+
+  /**
+   * @type {HTMLInputElement} colorInput
+   */
+  const colorInput = document.querySelector('input[type="color"]');
+
+  /**
+   * @type {HTMLInputElement} colorInput
+   */
+  const textInput = document.querySelector('input[type="text"]');
+  const fileInputs = document.querySelectorAll('input[type="file"]');
+  const output = document.getElementById("input-output");
+
+  /**
+   * @type {HTMLButtonElement} submitBtn
+   */
+  const submitBtn = document.querySelector('button[type="submit"]');
+
+  colorInput.addEventListener("change", () => {
+    textInput.value = "";
+    fileInputs.forEach((i) => {
+      i.value = "";
+    });
+    submitBtn.focus();
+  });
+
+  textInput.addEventListener("blur", (e) => {
+    if (e.target.value) {
+      colorInput.value = "";
+      fileInputs.forEach((i) => {
+        i.value = "";
+      });
+    }
+  });
+
+  fileInputs.forEach((input) => {
+    input.addEventListener("change", (e) => {
+      colorInput.value = "";
+      textInput.value = "";
+      fileInputs.forEach((i) => {
+        if (i !== input) {
+          i.value = "";
+        }
+      });
+      if (e.target.files[0]) {
+        output.innerText = "Je hebt succesvol een afbeelding geselecteerd.";
+        submitBtn.focus();
+      } else {
+        output.innerText = "";
+      }
+    });
+  });
 }
 
 async function getColorPalette() {
