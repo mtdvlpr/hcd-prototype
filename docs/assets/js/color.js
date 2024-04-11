@@ -49,7 +49,9 @@ async function getColor() {
   output.innerText = "Kleur wordt opgehaald...";
   const color = await translateColor(await fetchColorByImage(colorInput));
   if (color) {
-    output.innerText = `De gedetecteerde kleur is ${
+    output.innerHTML = `De gedetecteerde kleur is <span class="color" style="color: ${
+      color.hex
+    }" aria-hidden>•</span> ${
       color.name
     }. Deze kleur valt binnen de volgende categorieën: ${color.families.join(
       ", "
