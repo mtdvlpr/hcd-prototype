@@ -16,3 +16,9 @@ form > div > select + label,
 form > div > textarea + label {
   display: inline;
 }
+
+.no-capture {
+  .capture-input {
+    display: none;
+  }
+}

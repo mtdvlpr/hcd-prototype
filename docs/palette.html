@@ -19,6 +19,7 @@
         }
       }
     </script>
+    <script type="module" src="assets/js/main.js"></script>
     <script type="module" src="assets/js/palette.js"></script>
 
     <!-- Title and base URL -->
@@ -62,12 +63,14 @@
         <button
           type="button"
           onclick="document.getElementById('image-user').click()"
+          class="capture-input"
         >
           Maak een foto van jezelf
         </button>
         <button
           type="button"
           onclick="document.getElementById('image-environment').click()"
+          class="capture-input"
         >
           Maak een foto van je omgeving
         </button>
@@ -77,7 +80,7 @@
         >
           Kies een foto uit je galerij
         </button>
-        <div aria-hidden="true">
+        <div aria-hidden="true" class="capture-input">
           <label for="image-user">Maak een foto van jezelf</label>
           <input
             type="file"
@@ -87,7 +90,7 @@
             capture="user"
           />
         </div>
-        <div aria-hidden="true">
+        <div aria-hidden="true" class="capture-input">
           <label for="image-environment">Maak een foto van je omgeving</label>
           <input
             type="file"
