@@ -19,7 +19,7 @@ I had a feedback session with Vasilis. He was excited about the prototype I had 
 
 During the user test I found out that the user was able to use the app and get the desired results. The file input was a bit difficult to use, because of the default text "Choose a file". The user expected a description of "Take an image". The user also wanted to take a picture of herself instead of the environment, which I set as the default. The form did not reset after submitting, which was confusing for the user, because the new value was not used.
 
-I updated the prototype with the feedback from the user test. The default text of the file input is now "Take an image". The user can now take a picture of herself, the environment or use an existing image. The form now resets after submitting. 
+I updated the prototype with the feedback from the user test. The default text of the file input is now "Take an image". The user can now take a picture of herself, the environment or use an existing image. The form now resets after submitting.
 
 ## 12-4-2024
 
