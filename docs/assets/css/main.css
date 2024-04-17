@@ -32,15 +32,6 @@ main:target {
   outline-offset: 8px;
 }
 
-footer {
-  padding: 1em 0;
-  text-align: center;
-}
-
-footer p {
-  margin: 0 auto;
-}
-
 p {
   max-width: 60ch;
 }
