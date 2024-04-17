@@ -12,7 +12,6 @@ function initColorForm() {
   });
 
   const colorInputs = document.querySelectorAll('input[type="file"]');
-  const output = document.getElementById("input-output");
 
   colorInputs.forEach((input) => {
     input.addEventListener("change", (e) => {
@@ -21,12 +20,6 @@ function initColorForm() {
           i.value = "";
         }
       });
-      if (e.target.files[0]) {
-        output.innerText = "Je hebt succesvol een afbeelding geselecteerd.";
-        document.querySelector('button[type="submit"]').focus();
-      } else {
-        output.innerText = "Er is geen afbeelding geselecteerd.";
-      }
     });
   });
 }
@@ -42,7 +35,7 @@ async function getColor() {
 
   const output = document.getElementById("form-output");
   if (!colorInput) {
-    output.innerText = "Er is geen afbeelding geselecteerd.";
+    output.innerText = "Er is geen foto gekozen.";
     return;
   }
 

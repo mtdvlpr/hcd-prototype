@@ -26,7 +26,6 @@ function initPaletteForm() {
    */
   const textInput = document.querySelector('input[type="text"]');
   const fileInputs = document.querySelectorAll('input[type="file"]');
-  const output = document.getElementById("input-output");
 
   /**
    * @type {HTMLButtonElement} submitBtn
@@ -51,7 +50,7 @@ function initPaletteForm() {
   });
 
   fileInputs.forEach((input) => {
-    input.addEventListener("change", (e) => {
+    input.addEventListener("change", () => {
       colorInput.value = "";
       textInput.value = "";
       fileInputs.forEach((i) => {
@@ -59,12 +58,6 @@ function initPaletteForm() {
           i.value = "";
         }
       });
-      if (e.target.files[0]) {
-        output.innerText = "Je hebt succesvol een afbeelding geselecteerd.";
-        submitBtn.focus();
-      } else {
-        output.innerText = "";
-      }
     });
   });
 }
@@ -77,6 +70,12 @@ async function getColorPalette() {
     .value?.replace("#000000", "");
   const image = document.querySelector('input[type="file"]').files[0];
   const colorName = document.querySelector('input[type="text"]').value;
+
+  if (!colorInput && !image && !colorName) {
+    output.innerText = "Er is geen kleur of kledingstuk ingevuld.";
+    return;
+  }
+
   const color = await translateColor(
     await (colorInput
       ? fetchColorByHex(colorInput)
@@ -84,13 +83,16 @@ async function getColorPalette() {
       ? fetchColorByImage(image)
       : fetchColorByName(colorName))
   );
+
   if (!color) {
     output.innerText = "De kleur kon niet worden gedetecteerd.";
     return;
   }
+
   const colors = await Promise.all(
     (await fetchColorPalette(color.hex)).map(translateColor)
   );
+
   if (colors) {
     output.innerHTML = `<span>De volgende kleuren passen goed bij ${
       color.name
