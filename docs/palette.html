@@ -80,7 +80,7 @@
         >
           Kies een foto uit je galerij
         </button>
-        <div aria-hidden="true" class="capture-input">
+        <div aria-hidden="true" tabindex="-1" class="capture-input">
           <label for="image-user">Maak een foto van jezelf</label>
           <input
             type="file"
@@ -90,7 +90,7 @@
             capture="user"
           />
         </div>
-        <div aria-hidden="true" class="capture-input">
+        <div aria-hidden="true" tabindex="-1" class="capture-input">
           <label for="image-environment">Maak een foto van je omgeving</label>
           <input
             type="file"
@@ -100,7 +100,7 @@
             capture="environment"
           />
         </div>
-        <div aria-hidden="true">
+        <div aria-hidden="true" tabindex="-1">
           <label for="image-gallery">Kies een foto uit je galerij</label>
           <input type="file" id="image-gallery" name="image" accept="image/*" />
         </div>

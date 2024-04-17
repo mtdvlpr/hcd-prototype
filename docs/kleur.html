@@ -75,6 +75,7 @@
             name="image"
             accept="image/*"
             capture="user"
+            tabindex="-1"
           />
         </div>
         <div aria-hidden="true" class="capture-input">
@@ -85,11 +86,18 @@
             name="image"
             accept="image/*"
             capture="environment"
+            tabindex="-1"
           />
         </div>
         <div aria-hidden="true">
           <label for="image-gallery">Kies een foto uit je galerij</label>
-          <input type="file" id="image-gallery" name="image" accept="image/*" />
+          <input
+            type="file"
+            id="image-gallery"
+            name="image"
+            accept="image/*"
+            tabindex="-1"
+          />
         </div>
         <output id="input-output"></output>
         <button type="submit">Vraag kleur op</button>
