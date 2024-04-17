@@ -44,13 +44,19 @@
     <main id="main">
       <form action="">
         <p>
-          Selecteer een kleur, verstuur een foto van een kledingstuk of vul een
-          kleur in.
+          Type de naam van een kleur, gebruik een foto van een kledingstuk of
+          gebruik de kleuren picker.
         </p>
         <div>
-          <label for="color">Kleuren picker</label>
-          <input type="color" id="color" name="color" />
+          <label for="name">Kleur</label>
+          <input type="text" id="name" name="name" />
         </div>
+        <button
+          type="button"
+          onclick="document.getElementById('image-gallery').click()"
+        >
+          Kies een foto uit je galerij
+        </button>
         <button
           type="button"
           onclick="document.getElementById('image-user').click()"
@@ -65,12 +71,10 @@
         >
           Maak een foto van je omgeving
         </button>
-        <button
-          type="button"
-          onclick="document.getElementById('image-gallery').click()"
-        >
-          Kies een foto uit je galerij
-        </button>
+        <div aria-hidden="true" tabindex="-1">
+          <label for="image-gallery">Kies een foto uit je galerij</label>
+          <input type="file" id="image-gallery" name="image" accept="image/*" />
+        </div>
         <div aria-hidden="true" tabindex="-1" class="capture-input">
           <label for="image-user">Maak een foto van jezelf</label>
           <input
@@ -91,13 +95,9 @@
             capture="environment"
           />
         </div>
-        <div aria-hidden="true" tabindex="-1">
-          <label for="image-gallery">Kies een foto uit je galerij</label>
-          <input type="file" id="image-gallery" name="image" accept="image/*" />
-        </div>
         <div>
-          <label for="name">Kleur</label>
-          <input type="text" id="name" name="name" />
+          <label for="color">Kleuren picker</label>
+          <input type="color" id="color" name="color" />
         </div>
         <button type="submit">Vraag kleuren palette op</button>
       </form>

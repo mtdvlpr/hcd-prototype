@@ -1,4 +1,4 @@
-import { capitalize } from "general";
+import { capitalize, getToday } from "general";
 
 /**
  * Fetches data from a URL
@@ -7,7 +7,7 @@ import { capitalize } from "general";
  */
 async function fetchData(url) {
   if (window.localStorage) {
-    const data = window.localStorage.getItem(url);
+    const data = window.localStorage.getItem(getToday() + url);
     if (data) return JSON.parse(data);
   }
 
@@ -15,7 +15,7 @@ async function fetchData(url) {
     const response = await fetch(url);
     const data = await response.json();
     if (window.localStorage) {
-      window.localStorage.setItem(url, JSON.stringify(data));
+      window.localStorage.setItem(getToday() + url, JSON.stringify(data));
     }
     return data;
   } catch (e) {
@@ -30,6 +30,7 @@ async function fetchData(url) {
  * @returns {Promise<{name: string; hex: string; rgb: string; families: string[]} | null>} The color
  */
 export async function fetchColorByImage(image) {
+  if (!image) return null;
   const url = "./assets/data/colors.json";
   const colors = await fetchData(url);
   if (!colors) return null;
@@ -50,13 +51,26 @@ export async function fetchColorPalette(hex) {
 
   const data = await fetchData(url);
   if (!data) return [];
-  return data.colors.map((color) => {
+  const mapped = data.colors.map((color) => {
     return {
       name: color.name.value,
       hex: color.hex.value,
       rgb: color.rgb.value,
+      families: [],
     };
   });
+
+  for (let i = 0; i < mapped.length; i++) {
+    const nameMatch = await fetchColorByName(mapped[i].name);
+    if (nameMatch) {
+      mapped[i].families = nameMatch.families;
+    } else {
+      const hexMatch = await fetchColorByHex(mapped[i].hex);
+      if (hexMatch) mapped[i].families = hexMatch.families;
+    }
+  }
+
+  return mapped;
 }
 
 /**
@@ -66,6 +80,11 @@ export async function fetchColorPalette(hex) {
  */
 export async function fetchColorByHex(hex) {
   if (!hex) return null;
+
+  const colors = await fetchData("./assets/data/colors.json");
+  const match = colors.find((color) => color.hex === hex.toUpperCase());
+  if (match) return match;
+
   const url = `https://www.thecolorapi.com/id?format=json&hex=${hex.replace(
     "#",
     ""

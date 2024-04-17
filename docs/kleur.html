@@ -42,6 +42,12 @@
       <form action="">
         <button
           type="button"
+          onclick="document.getElementById('image-gallery').click()"
+        >
+          Kies een foto uit je galerij
+        </button>
+        <button
+          type="button"
           onclick="document.getElementById('image-user').click()"
           class="capture-input"
         >
@@ -54,12 +60,16 @@
         >
           Maak een foto van je omgeving
         </button>
-        <button
-          type="button"
-          onclick="document.getElementById('image-gallery').click()"
-        >
-          Kies een foto uit je galerij
-        </button>
+        <div aria-hidden="true">
+          <label for="image-gallery">Kies een foto uit je galerij</label>
+          <input
+            type="file"
+            id="image-gallery"
+            name="image"
+            accept="image/*"
+            tabindex="-1"
+          />
+        </div>
         <div aria-hidden="true" class="capture-input">
           <label for="image-user">Maak een foto van jezelf</label>
           <input
@@ -79,16 +89,6 @@
             name="image"
             accept="image/*"
             capture="environment"
-            tabindex="-1"
-          />
-        </div>
-        <div aria-hidden="true">
-          <label for="image-gallery">Kies een foto uit je galerij</label>
-          <input
-            type="file"
-            id="image-gallery"
-            name="image"
-            accept="image/*"
             tabindex="-1"
           />
         </div>

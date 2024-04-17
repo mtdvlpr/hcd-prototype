@@ -438,10 +438,34 @@
     "families": ["blue", "aqua"]
   },
   {
+    "name": "HARLEQUIN",
+    "hex": "#3AFE09",
+    "rgb": "RGB(58, 254, 9)",
+    "families": ["green", "light"]
+  },
+  {
+    "name": "JAVA",
+    "hex": "#16C3C3",
+    "rgb": "RGB(0, 255, 255)",
+    "families": ["blue", "cyan"]
+  },
+  {
     "name": "CYAN",
     "hex": "#00FFFF",
     "rgb": "RGB(0, 255, 255)",
     "families": ["blue", "cyan"]
+  },
+  {
+    "name": "LUCKY",
+    "hex": "#A7A718",
+    "rgb": "RGB(167, 167, 24)",
+    "families": ["yellow", "dark"]
+  },
+  {
+    "name": "TURBO",
+    "hex": "#F9E004",
+    "rgb": "RGB(249, 224, 4)",
+    "families": ["yellow"]
   },
   {
     "name": "LIGHTCYAN",

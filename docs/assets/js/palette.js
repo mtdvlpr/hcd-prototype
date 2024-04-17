@@ -99,7 +99,11 @@ async function getColorPalette() {
     }:</span> ${colors
       .map(
         (c) =>
-          `<span><span class="color" style="color: ${c.hex}" aria-hidden>•</span> ${c.name}</span>`
+          `<span><span class="color" style="color: ${
+            c.hex
+          }" aria-hidden>•</span> ${c.name}${
+            c.families?.length ? ` (${c.families.join(", ")})` : ""
+          }</span>`
       )
       .join("<span class='visually-hidden'>, </span>")}`;
   } else {

@@ -31,7 +31,7 @@ I made some more changes to the prototype. The input fields are now skipped whil
 
 ## 17-4-2024
 
-User test
+The user test went well. The newly added buttons made the experience of making an image easier. The user found the color picker the least useful, so I will move it to the bottom of the form. The user found the image from gallery the best option, so I will move it to the top of the form. The color names were not always clear (e.g. "Turbo"). I'll try to get some more descriptions for the colors.
 
 ## 19-4-2024
 
