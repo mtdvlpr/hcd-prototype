@@ -8,6 +8,8 @@ In the interview I came to the conclusion that the most important features would
 
 I created a prototype that can detect colors of a piece of clothing and that can detect matching pieces of clothing. The user can take a picture of a piece of clothing and the app will detect the colors of the piece of clothing. The user can then select a color by file input, color picker or text and the app will show matching pieces of clothing.
 
+I tested the HTML color picker myself using a screen reader, but I couldn't get it to work. I decided however to keep it in the prototype, keeping in mind the Exclusive Design principle "Add nonsense", because maybe the user can use it.
+
 <img src="https://github.com/mtdvlpr/hcd-prototype/assets/46671786/efc0975a-cd11-431b-8a34-cb3245521557" alt="Prototype colors v1" width="45%">
 <img src="https://github.com/mtdvlpr/hcd-prototype/assets/46671786/aa66bdee-4dd5-4419-8b45-b2ac6809e387" alt="Prototype color palette v1" width="45%">
 
@@ -39,4 +41,4 @@ The user test went well. The newly added buttons made the experience of making a
 
 ## 19-4-2024
 
-Feedback session
+After the feedback session with Vasilis, I decided to remove the color picker. Vasilis reminded me of the Exclusive Design principle "Prioritise identity". The user wouldn't use the color picker, because the text and file inputs are easier to use.
