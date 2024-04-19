@@ -21,6 +21,8 @@ During the user test I found out that the user was able to use the app and get t
 
 I updated the prototype with the feedback from the user test. I created buttons with clear texts to control the file inputs. The user can now take a picture of herself, the environment or use an existing image. The form now resets after submitting.
 
+![Screenshot 2024-04-19 093800](https://github.com/mtdvlpr/hcd-prototype/assets/46671786/8222dd26-0685-4e1b-9e62-434f30e96ce6)
+
 ## 12-4-2024
 
 I showed the updated prototype to Eric. He was happy with the changes I made, but he urged me to think about adding nonsense. I will think about this in the next sprint.
@@ -28,6 +30,8 @@ I showed the updated prototype to Eric. He was happy with the changes I made, bu
 ## 16-4-2024
 
 I made some more changes to the prototype. The input fields are now skipped while tabbing, so you have to use the buttons and don't get duplicate controls along the page. I improved the feedback when submitting the form and I moved the navigation to the bottom of the page.
+
+![Screenshot 2024-04-19 093505](https://github.com/mtdvlpr/hcd-prototype/assets/46671786/600e1d7f-2262-4663-9f3b-b3ff06d194fd)
 
 ## 17-4-2024
 
