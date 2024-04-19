@@ -39,6 +39,9 @@ I made some more changes to the prototype. The input fields are now skipped whil
 
 The user test went well. The newly added buttons made the experience of making an image easier. The user found the color picker the least useful, so I will move it to the bottom of the form. The user found the image from gallery the best option, so I will move it to the top of the form. The color names were not always clear (e.g. "Turbo"). I'll try to get some more descriptions for the colors.
 
+<img src="https://github.com/mtdvlpr/hcd-prototype/assets/46671786/3a05ba77-37f2-440e-b354-237c42d07aeb" alt="Prototype color palette before" width="45%">
+<img src="https://github.com/mtdvlpr/hcd-prototype/assets/46671786/c1fe9677-ec36-4468-9b63-9d72b103e36c" alt="Prototype color palette after" width="45%">
+
 ## 19-4-2024
 
 After the feedback session with Vasilis, I decided to remove the color picker. Vasilis reminded me of the Exclusive Design principle "Prioritise identity". The user wouldn't use the color picker, because the text and file inputs are easier to use.
