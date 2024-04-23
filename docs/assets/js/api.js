@@ -1,4 +1,4 @@
-import { capitalize, getToday } from "general";
+import { RGBToHSL, capitalize, getToday } from "general";
 
 /**
  * Fetches data from a URL
@@ -25,23 +25,35 @@ async function fetchData(url) {
 }
 
 /**
+ * Maps a color object
+ * @param {{name: string; hex: string; rgb: string; hsl?: string; families: string[]}} color The color to map
+ * @returns {{name: string; hex: string; rgb: string; hsl: string; families: string[]}} The mapped color
+ */
+async function mapColor(color) {
+  if (!color) return null;
+  const mapped = color;
+  if (!mapped.hsl && mapped.rgb) mapped.hsl = RGBToHSL(mapped.rgb);
+  return mapped;
+}
+
+/**
  * Fetches a color by an image
  * @param {File} image The image file
- * @returns {Promise<{name: string; hex: string; rgb: string; families: string[]} | null>} The color
+ * @returns {Promise<{name: string; hex: string; rgb: string; hsl: string; families: string[]} | null>} The color
  */
 export async function fetchColorByImage(image) {
-  if (!image) return null;
+  // if (!image) return null;
   const url = "./assets/data/colors.json";
   const colors = await fetchData(url);
   if (!colors) return null;
   const index = Math.floor(Math.random() * colors.length);
-  return colors[index];
+  return mapColor(colors[index]);
 }
 
 /**
  * Fetches colors that complement a given hex color
  * @param {string} hex The hex color
- * @returns {Promise<{name: string; hex: string; rgb: string}[]>} The colors
+ * @returns {Promise<{name: string; hex: string; hsl: string; rgb: string}[]>} The colors
  */
 export async function fetchColorPalette(hex) {
   const url = `https://www.thecolorapi.com/scheme?mode=analogic-complement&hex=${hex.replace(
@@ -56,6 +68,7 @@ export async function fetchColorPalette(hex) {
       name: color.name.value,
       hex: color.hex.value,
       rgb: color.rgb.value,
+      hsl: color.hsl.value,
       families: [],
     };
   });
@@ -76,14 +89,14 @@ export async function fetchColorPalette(hex) {
 /**
  * Fetches a color by a hex code
  * @param {string} hex The hex color
- * @returns {Promise<{name: string; hex: string; rgb: string}>} The color
+ * @returns {Promise<{name: string; hsl: string; hex: string; rgb: string}>} The color
  */
 export async function fetchColorByHex(hex) {
   if (!hex) return null;
 
   const colors = await fetchData("./assets/data/colors.json");
   const match = colors.find((color) => color.hex === hex.toUpperCase());
-  if (match) return match;
+  if (match) return mapColor(match);
 
   const url = `https://www.thecolorapi.com/id?format=json&hex=${hex.replace(
     "#",
@@ -95,6 +108,7 @@ export async function fetchColorByHex(hex) {
     name: color.name.value,
     hex: color.hex.value,
     rgb: color.rgb.value,
+    hsl: color.hsl.value,
   };
 }
 
@@ -123,14 +137,14 @@ export async function fetchColorNames() {
 /**
  * Fetches the color by name
  * @param {string} name The color name
- * @returns {Promise<{name: string; hex: string; rgb: string; families: string[]} | null>} The color
+ * @returns {Promise<{name: string; hex: string; rgb: string; hsl: string; families: string[]} | null>} The color
  */
 export async function fetchColorByName(name) {
   if (!name) return null;
   const url = "./assets/data/colors.json";
   const colors = await fetchData(url);
   const match = colors.find((color) => color.name === name.toUpperCase());
-  if (match) return match;
+  if (match) return mapColor(match);
 
   const names = await fetchColorNames();
   const translation = Object.keys(names).find(
@@ -140,6 +154,6 @@ export async function fetchColorByName(name) {
   const color = colors.find(
     (color) => color.name === translation.toUpperCase()
   );
-  if (color) return color;
+  if (color) return mapColor(color);
   return null;
 }

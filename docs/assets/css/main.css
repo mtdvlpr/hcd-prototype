@@ -68,6 +68,10 @@ output {
   max-width: 100%;
 }
 
+output > ul {
+  width: 100%;
+}
+
 output > span {
   display: flex;
   align-items: center;

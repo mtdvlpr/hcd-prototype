@@ -1,13 +1,11 @@
-import {
-  fetchColorByHex,
-  fetchColorByImage,
-  fetchColorPalette,
-  fetchColorByName,
-} from "api";
-import { translateColor } from "general";
+import { fetchColorByImage, fetchColorPalette, fetchColorByName } from "api";
+import { translateColor, describeColor } from "general";
 
 initPaletteForm();
 
+/**
+ * Initializes the palette form
+ */
 function initPaletteForm() {
   const form = document.querySelector("form");
   form.addEventListener("submit", async (e) => {
@@ -16,33 +14,11 @@ function initPaletteForm() {
     form.reset();
   });
 
-  /**
-   * @type {HTMLInputElement} colorInput
-   */
-  const colorInput = document.querySelector('input[type="color"]');
-
-  /**
-   * @type {HTMLInputElement} colorInput
-   */
   const textInput = document.querySelector('input[type="text"]');
   const fileInputs = document.querySelectorAll('input[type="file"]');
 
-  /**
-   * @type {HTMLButtonElement} submitBtn
-   */
-  const submitBtn = document.querySelector('button[type="submit"]');
-
-  colorInput.addEventListener("change", () => {
-    textInput.value = "";
-    fileInputs.forEach((i) => {
-      i.value = "";
-    });
-    submitBtn.focus();
-  });
-
   textInput.addEventListener("blur", (e) => {
     if (e.target.value) {
-      colorInput.value = "";
       fileInputs.forEach((i) => {
         i.value = "";
       });
@@ -51,7 +27,6 @@ function initPaletteForm() {
 
   fileInputs.forEach((input) => {
     input.addEventListener("change", () => {
-      colorInput.value = "";
       textInput.value = "";
       fileInputs.forEach((i) => {
         if (i !== input) {
@@ -62,26 +37,23 @@ function initPaletteForm() {
   });
 }
 
+/**
+ * Gets the color palette
+ */
 async function getColorPalette() {
   const output = document.querySelector("output");
   output.innerText = "Kleuren palette wordt opgehaald...";
-  const colorInput = document
-    .querySelector('input[type="color"]')
-    .value?.replace("#000000", "");
+
   const image = document.querySelector('input[type="file"]').files[0];
   const colorName = document.querySelector('input[type="text"]').value;
 
-  if (!colorInput && !image && !colorName) {
+  if (!image && !colorName) {
     output.innerText = "Er is geen kleur of kledingstuk ingevuld.";
     return;
   }
 
   const color = await translateColor(
-    await (colorInput
-      ? fetchColorByHex(colorInput)
-      : image
-      ? fetchColorByImage(image)
-      : fetchColorByName(colorName))
+    await (image ? fetchColorByImage(image) : fetchColorByName(colorName))
   );
 
   if (!color) {
@@ -96,16 +68,16 @@ async function getColorPalette() {
   if (colors) {
     output.innerHTML = `<span>De volgende kleuren passen goed bij ${
       color.name
-    }:</span> ${colors
+    }:</span> <ul>${colors
       .map(
         (c) =>
-          `<span><span class="color" style="color: ${
+          `<li><span><span class="color" style="color: ${
             c.hex
           }" aria-hidden>•</span> ${c.name}${
             c.families?.length ? ` (${c.families.join(", ")})` : ""
-          }</span>`
+          }${c.hsl ? `. ${describeColor(c.hsl)}` : ""}</span></li>`
       )
-      .join("<span class='visually-hidden'>, </span>")}`;
+      .join("<span class='visually-hidden'>, </span>")}</ul>`;
   } else {
     output.innerText = "Het kleuren palette kon niet worden opgehaald.";
   }

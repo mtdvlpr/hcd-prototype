@@ -1,8 +1,11 @@
 import { fetchColorByImage } from "api";
-import { translateColor } from "general";
+import { describeColor, translateColor } from "general";
 
 initColorForm();
 
+/**
+ * Initializes the color form
+ */
 function initColorForm() {
   const form = document.querySelector("form");
   form.addEventListener("submit", async (e) => {
@@ -24,6 +27,9 @@ function initColorForm() {
   });
 }
 
+/**
+ * Gets the color
+ */
 async function getColor() {
   const colorInputs = document.querySelectorAll('input[type="file"]');
   let colorInput;
@@ -34,21 +40,22 @@ async function getColor() {
   });
 
   const output = document.getElementById("form-output");
-  if (!colorInput) {
+  /*if (!colorInput) {
     output.innerText = "Er is geen foto gekozen.";
     return;
-  }
+  }*/
 
   output.innerText = "Kleur wordt opgehaald...";
   const color = await translateColor(await fetchColorByImage(colorInput));
   if (color) {
+    describeColor(color.hsl);
     output.innerHTML = `De gedetecteerde kleur is <span class="color" style="color: ${
       color.hex
     }" aria-hidden>•</span> ${
       color.name
     }. Deze kleur valt binnen de volgende categorieën: ${color.families.join(
       ", "
-    )}.`;
+    )}.${color.hsl ? ` ${describeColor(color.hsl)}` : ""}`;
   } else {
     output.innerText = "De kleur kon niet worden gedetecteerd.";
   }
