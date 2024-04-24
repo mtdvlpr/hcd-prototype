@@ -44,4 +44,12 @@ The user test went well. The newly added buttons made the experience of making a
 
 ## 19-4-2024
 
-After the feedback session with Vasilis, I decided to remove the color picker. Vasilis reminded me of the Exclusive Design principle "Prioritise identity". The user wouldn't use the color picker, because the text and file inputs are easier to use.
+After the feedback session with Vasilis, I decided to remove the color picker. Vasilis reminded me of the Exclusive Design principle "Prioritise identity". The user wouldn't use the color picker, because the text and file inputs are easier to use. He also showed me a script that could help me describe colors better. I will try to implement this.
+
+## 23-4-2024
+
+I added the script that Vasilis showed me to the prototype. The colors are now described better.
+
+## 24-4-2024
+
+[user test]
