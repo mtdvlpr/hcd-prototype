@@ -150,10 +150,10 @@ function describeHue(h) {
 }
 
 function describeSaturation(s) {
-  if (s > 80) return "enorm verzadigd";
-  if (s > 60) return "flink verzadigd";
-  if (s > 30) return "onverzadigd";
-  if (s > 9) return "erg onderverzadigd";
+  if (s > 80) return "enorm fel";
+  if (s > 60) return "heel fel";
+  if (s > 30) return "grauw";
+  if (s > 9) return "erg grauw";
   return "bijna grijs";
 }
 

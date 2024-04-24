@@ -54,4 +54,4 @@ I added the script that Vasilis showed me to the prototype. The colors are now d
 
 ## 24-4-2024
 
-[user test]
+I had the final user test. The user understood the purpose of the extra description and liked the premise, but the word "verzadigd" was not clear. I will try to find a better word for this. Furthermore, the user would prefer easier language overall that fits better with the screen reader that reads the words aloud.
