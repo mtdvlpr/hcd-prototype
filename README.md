@@ -50,6 +50,8 @@ After the feedback session with Vasilis, I decided to remove the color picker. V
 
 I added the script that Vasilis showed me to the prototype. The colors are now described better.
 
+![Screenshot 2024-04-24 090911](https://github.com/mtdvlpr/hcd-prototype/assets/46671786/e23f7bf5-f956-4f74-9575-0efd6b205991)
+
 ## 24-4-2024
 
 [user test]
