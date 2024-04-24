@@ -152,8 +152,8 @@ function describeHue(h) {
 function describeSaturation(s) {
   if (s > 80) return "enorm fel";
   if (s > 60) return "heel fel";
-  if (s > 30) return "grauw";
-  if (s > 9) return "erg grauw";
+  if (s > 30) return "flets";
+  if (s > 9) return "erg flets";
   return "bijna grijs";
 }
 
