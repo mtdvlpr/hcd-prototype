@@ -54,7 +54,7 @@ I added the script that Vasilis showed me to the prototype. The colors are now d
 
 ## 24-4-2024
 
-I had the final user test. The user understood the purpose of the extra description and liked the premise, but the word "verzadigd" (saturated) was not clear. I will try to find a better word for this. Furthermore, the user would prefer easier language overall that fits better with the screen reader that reads the words aloud.
+I had the final user test. The user understood the purpose of the extra description and liked the premise, but the word "verzadigd" (saturated) was not clear. Furthermore, the user would prefer easier language overall that fits better with the screen reader that reads the words aloud.
 
 I changed the word "verzadigd" to "fel" (bright) and I changed the word "onverzadigd" (unsaturated) to "flets" (pale) as per the user's preference.
 
@@ -77,3 +77,10 @@ I prioritized identity by testing the prototype with the user and implementing t
 ### Add nonsense
 
 An example of nonsense that I added was adding a color picker, since the user is blind and relies on a screen reader. While testing myself with a screen reader, I couldn't get the color picker to work, but I decided to keep it in the prototype so the user could actually test it herself. It turned out that the user didn't use the color picker, so I removed it, but because I tested it, I could be sure that the user wouldn't use it and didn't make the assumption that the user wouldn't use it.
+
+### Future improvements
+
+I have a few ideas on how this prototype could be improved:
+
+- The user wanted the wording to better fit with the screen reader that reads the words aloud. This could implemented by using language that is more common when speaking.
+- While watching the user tests of others, I noticed that the user wanted to know when she reached the end of the page, to prevent going to the browser controls. This could be implemented by adding a footer with a "back to top" link.
