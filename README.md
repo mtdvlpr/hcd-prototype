@@ -55,3 +55,25 @@ I added the script that Vasilis showed me to the prototype. The colors are now d
 ## 24-4-2024
 
 I had the final user test. The user understood the purpose of the extra description and liked the premise, but the word "verzadigd" was not clear. I will try to find a better word for this. Furthermore, the user would prefer easier language overall that fits better with the screen reader that reads the words aloud.
+
+I changed the word "verzadigd" to "fel" and I changed the word "onverzadigd" to "flets" as per the user's preference.
+
+## Reflection
+
+Before the course started, I had an entirely different expectation of what I would be doing. I thought I would be applying the "regular" inclusive design principles, so I was surprised when we had to apply the exact opposite of those principles. We had to study the situation, ignore conventions (when applicable), prioritise identity and add nonsense. I am happy with the result of the prototype. I think I have succeeded in applying the principles and I have learned a lot from it. I will definitely use this knowledge in future projects.
+
+### Study situation
+
+I studied the situation by having an interview with the user as a group. I concluded that the most important features would be to detect colors of a piece of clothing and to detect matching pieces of clothing. I also concluded that the user wants to be able to do things herself.
+
+### Ignore conventions
+
+I ignored the convention to have the navigation at the top of the page. I moved the navigation to the bottom of the page, because the user would be able to use the application more easily and didn't really need the navigation.
+
+### Prioritise identity
+
+I prioritized identity by testing the prototype with the user and implementing the feedback she gave.
+
+### Add nonsense
+
+An example of nonsense that I added was adding a color picker, since the user is blind and relies on a screen reader. While testing myself with a screen reader, I couldn't get the color picker to work, but I decided to keep it in the prototype so the user could actually test it herself. It turned out that the user didn't use the color picker, so I removed it, but because I tested it, I could be sure that the user wouldn't use it and didn't make the assumption that the user wouldn't use it.
